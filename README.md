@@ -1,6 +1,6 @@
 # ReBot Arm B601 机械描述复用包
 
-`Rebot_Arm_description/` 汇总了 B601-RS 与 B601-DM 当前使用的 URDF、STL，以及 D405、D435i、Gemini 2 腕部相机装配资源，供 Web、RViz、ROS 2、MuJoCo 或其他机器人项目复用。
+`Rebot_Arm_description/` 汇总了 B601-RS 与 B601-DM 当前使用的 URDF、STL，以及 32×32 UVC、D405、D435i、Gemini 2 腕部相机装配资源，供 Web、RViz、ROS 2、MuJoCo 或其他机器人项目复用。
 
 本目录采用相对路径，自带模型显示、URDF 碰撞和 MuJoCo 夹爪精细碰撞所需的网格。复制时建议保留整个版本目录，不要把 STL 全部摊平到同一层。
 
@@ -15,7 +15,7 @@ Rebot_Arm_description/
 │   └── rviz_urdf_compat.py    # ROS 2 Jazzy RViz 多材质显示兼容处理
 ├── Camera/
 │   ├── README.md
-│   ├── urdf/                  # D405 / D435i / Gemini 2 相机装配 URDF
+│   ├── urdf/                  # UVC32 / D405 / D435i / Gemini 2 相机装配 URDF
 │   ├── meshes/                # 支架、相机本体 STL / Collada
 │   ├── source/                # 上游装配和厂家 Xacro
 │   ├── source.json            # 来源版本和文件哈希
@@ -40,9 +40,9 @@ Rebot_Arm_description/
         └── mujoco_collision/   # 6 个：仅用于 DM MuJoCo 夹指碰撞
 ```
 
-腕部相机资源、安装位置和 MuJoCo 装配截图见中英文说明 [`Camera/README.md`](Camera/README.md)。D405、D435i、Gemini 2 的相机本体、支架、网格和装配 URDF 供 B601-RS 与 B601-DM 共用。相机装配以空的 `gripper_end` 为根参考系；RS 可挂到同名 link，DM 使用 `end_link`，需通过固定安装变换对齐参考系。复用时请保留整个 `Camera/` 目录。
+腕部相机资源、安装位置和 MuJoCo 装配截图见中英文说明 [`Camera/README.md`](Camera/README.md)。32×32 UVC、D405、D435i、Gemini 2 的相机本体、支架、网格和装配 URDF 供 B601-RS 与 B601-DM 共用。相机装配以空的 `gripper_end` 为根参考系；RS 可挂到同名 link，DM 使用 `end_link`，需通过固定安装变换对齐参考系。复用时请保留整个 `Camera/` 目录。
 
-Wrist camera resources, mounting poses and MuJoCo assembly screenshots are documented in the bilingual [`Camera/README.md`](Camera/README.md). D405, D435i and Gemini 2 camera bodies, brackets, meshes and assembly URDFs are shared by B601-RS and B601-DM. Each assembly uses an empty `gripper_end` root reference frame; RS can attach it to the link of the same name, while DM uses `end_link` and requires a fixed mounting transform to align the reference frames. Copy the complete `Camera/` directory when reusing an assembly.
+Wrist camera resources, mounting poses and MuJoCo assembly screenshots are documented in the bilingual [`Camera/README.md`](Camera/README.md). 32×32 UVC, D405, D435i and Gemini 2 camera bodies, brackets, meshes and assembly URDFs are shared by B601-RS and B601-DM. Each assembly uses an empty `gripper_end` root reference frame; RS can attach it to the link of the same name, while DM uses `end_link` and requires a fixed mounting transform to align the reference frames. Copy the complete `Camera/` directory when reusing an assembly.
 
 ## 分类含义
 
